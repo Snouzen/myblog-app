@@ -24,7 +24,7 @@ export default function BlogCard({ blog }: { blog: IBlog }) {
             {blog.title}
           </h2>
           <div className="text-[12px] flex gap-1.5 text-gray-600">
-            <span className="capitalize">{blog.author.name}</span>
+            <span className="capitalize">{blog.author?.name ?? "Anonim"}</span>
             <span>|</span>
             <span>{convertTime(blog.created)}</span>
           </div>
