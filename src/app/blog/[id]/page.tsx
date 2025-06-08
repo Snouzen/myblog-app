@@ -36,7 +36,7 @@ export default async function Page({
             {blog.title}
           </div>
           <div className="flex gap-2 text-[12px] capitalize">
-            <span className="font-bold">{blog.author.name}</span>
+            <span className="font-bold">{blog.author ? blog.author.name : "Anonim"}</span>
             <span>∙</span>
             <span className="font-light">{convertTime(blog.created)}</span>
           </div>
