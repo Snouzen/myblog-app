@@ -11,7 +11,7 @@ export interface IBlog {
     content: string
     thumbnail: string
     created: number
-    author: IAuthor
+    author?: IAuthor | null
 }
 
 export interface BlogInput {
