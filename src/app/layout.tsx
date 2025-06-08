@@ -1,6 +1,10 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
+import { Bounce, ToastContainer } from "react-toastify";
+import Navbar from "@/components/navbar";
+import { SessionProvider } from "next-auth/react";
+import "react-quill-new/dist/quill.snow.css";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -27,7 +31,18 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        {children}
+        <SessionProvider>
+          <Navbar />
+          {children}
+        </SessionProvider>
+        <ToastContainer 
+          position="bottom-right"
+          autoClose={3000}
+          draggable
+          theme="dark"
+          closeOnClick
+          transition={Bounce}
+        />
       </body>
     </html>
   );
